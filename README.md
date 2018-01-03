@@ -3,4 +3,4 @@
 >Autor: **DS**
 
 ## Opis projektu
->Repozytorium æwiczeniowe
+>Repozytorium cwiczeniowe

@@ -1,0 +1,3 @@
+pwd [print working dir]
+git add -h 
+git add --help

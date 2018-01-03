@@ -1,0 +1,35 @@
+%fcja rozwiazuje uklad dwoch rownan stopnia pierwszego z dwoma niewiadomymi
+%i rysuje
+
+function uklad(a,b,c,d,e,f)
+
+    fprintf('%fx+%fy=%f\n',a,b,c) 
+    fprintf('%fx+%fy=%f\n',d,e,f) 
+    
+    A = [ a b
+          d e ];
+    B = [ c
+          f ];
+      
+    %disp(rank(A))
+    %disp(rank(B))    
+      
+    if(rank(A)<size(A))
+       if(rank(A)==rank(B))
+          fprintf('uklad jest nieoznaczony')
+          return
+       end
+       
+       fprintf('uklad jest sprzeczny') 
+       return
+    end
+        
+    C = lsqlin(A,B)
+    
+    x = -50:.1:50;
+    y = (c-a*x)/b;
+    x2 = -50:.1:50;
+    y2=(f/e)-(d/e)*x;
+    plot(x,y,x2,y2,'r')
+   % set(p,'Color','red','LineWidth',2)
+end
